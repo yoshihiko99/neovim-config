@@ -13,6 +13,8 @@ Plug 'lambdalisue/fern.vim'  "filer
   Plug 'lambdalisue/glyph-palette.vim'  "icon color
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'sainnhe/gruvbox-material'
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
 
 call plug#end()
 
@@ -35,6 +37,31 @@ nnoremap <Plug>(ff)  <Nop>
 xnoremap <Plug>(ff)  <Nop>
 nmap     ;           <Plug>(ff)
 xmap     ;           <Plug>(ff)
+
+" ============================================================================================
+" keymapping
+" ============================================================================================
+noremap <S-h> 0
+noremap <S-l> $
+
+" ============================================================================================
+" terninal
+" ============================================================================================
+" for moving window in terminal
+tnoremap <C-W>n       <cmd>new<cr>
+tnoremap <C-W>q       <cmd>quit<cr>
+tnoremap <C-W>j       <cmd>wincmd j<cr>
+tnoremap <C-W>k       <cmd>wincmd k<cr>
+tnoremap <C-W>h       <cmd>wincmd h<cr>
+tnoremap <C-W>l       <cmd>wincmd l<cr>
+
+
+" ============================================================================================
+" lualine
+" ============================================================================================
+lua << END
+require('lualine').setup()
+END
 
 " ============================================================================================
 "" fern.vim
@@ -264,3 +291,4 @@ EOF
 "" gruvbox
 " ============================================================================================
 colorscheme gruvbox-material
+
