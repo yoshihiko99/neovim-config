@@ -8,6 +8,9 @@ Plug 'lambdalisue/fern.vim'  "filer
   Plug 'yuki-yano/fern-preview.vim'  "show preview
   Plug 'lambdalisue/fern-git-status.vim'  "show git status
   Plug 'lambdalisue/fern-hijack.vim'  "open filer when 'vi .'
+  Plug 'lambdalisue/nerdfont.vim'  "icon
+  Plug 'lambdalisue/fern-renderer-nerdfont.vim'  "icon
+  Plug 'lambdalisue/glyph-palette.vim'  "icon color
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'sainnhe/gruvbox-material'
 
@@ -50,6 +53,15 @@ endfunction
 augroup fern-settings
   autocmd!
   autocmd FileType fern call s:fern_settings()
+augroup END
+
+let g:fern#renderer = 'nerdfont'
+
+" アイコンに色をつける
+augroup my-glyph-palette
+  autocmd! *
+  autocmd FileType fern call glyph_palette#apply()
+  autocmd FileType nerdtree,startify call glyph_palette#apply()
 augroup END
 
 " ============================================================================================
