@@ -1,4 +1,3 @@
-
 call plug#begin('~/.vim/plugged')
 
 Plug 'vim-jp/vimdoc-ja'
@@ -43,6 +42,12 @@ xmap     ;           <Plug>(ff)
 " ============================================================================================
 noremap <S-h> 0
 noremap <S-l> $
+noremap <Left>  <Nop>
+noremap <Down>  <Nop>
+noremap <Up>    <Nop>
+noremap <Right> <Nop>
+nnoremap p ]p
+nnoremap P ]P
 
 " ============================================================================================
 " terninal
@@ -54,7 +59,7 @@ tnoremap <C-W>j       <cmd>wincmd j<cr>
 tnoremap <C-W>k       <cmd>wincmd k<cr>
 tnoremap <C-W>h       <cmd>wincmd h<cr>
 tnoremap <C-W>l       <cmd>wincmd l<cr>
-
+tnoremap <C-W>c       <cmd>close<cr>
 
 " ============================================================================================
 " lualine
@@ -75,6 +80,7 @@ function! s:fern_settings() abort
   nmap <silent> <buffer> <C-p> <Plug>(fern-action-preview:auto:toggle)
   nmap <silent> <buffer> <C-d> <Plug>(fern-action-preview:scroll:down:half)
   nmap <silent> <buffer> <C-u> <Plug>(fern-action-preview:scroll:up:half)
+  nmap <silent> <buffer> L     <Plug>(fern-action-open:right)
 endfunction
 
 augroup fern-settings
